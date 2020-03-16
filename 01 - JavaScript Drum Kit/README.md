@@ -1,4 +1,4 @@
-# drum kit
+# Drum Kit
 
 ### Specification
 - (이벤트) -> (결과)

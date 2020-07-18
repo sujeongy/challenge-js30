@@ -1,5 +1,7 @@
 # Drum Kit
 
+<img src="./DrumKit.png" width="100%" alt='DrumKit Preview'/>
+
 ### Specification
 - (이벤트) -> (결과)
 - 키보드로 눌렀을 때, 해당 소리와 모양의 변화가 일어나게 한다.

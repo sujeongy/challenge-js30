@@ -45,6 +45,26 @@
   </style>
 
   <script>
+    const spacing = document.querySelector('#spacing');
+    const blur = document.querySelector('#blur');
+    const base = document.querySelector('#base');
+    const img = document.querySelector('img');
+
+    document.addEventListener('DOMContentLoaded', function() {
+      img.style.borderWidth = spacing.value + spacing.dataset.sizing;
+      img.style.filter = 'blur('+blur.value + blur.dataset.sizing+')';
+      img.style.border = '10px solid ' + base.value;
+    });
+
+    spacing.addEventListener('change', function() {
+      img.style.borderWidth = this.value + this.dataset.sizing;
+    });
+    blur.addEventListener('change', function() {
+      img.style.filter = 'blur('+this.value + this.dataset.sizing+')';
+    });
+    base.addEventListener('change', function() {
+      img.style.borderColor = this.value;
+    });
   </script>
 
 </body>

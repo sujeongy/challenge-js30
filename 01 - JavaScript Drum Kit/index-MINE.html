@@ -60,13 +60,15 @@
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
   <script>
+
+    function getNode(selector) {
+      return document.querySelector(selector)
+    }
+
     function playStart(e) {
-      const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
-      const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-      const playedKey = document.querySelector('.key.playing');
-      function remover() {
-        key.classList.remove('playing')
-      }
+      const key = getNode(`.key[data-key="${e.keyCode}"]`);
+      const audio = getNode(`audio[data-key="${e.keyCode}"]`);
+      const playedKey = getNode('.key.playing');
 
       if (!audio) return;
       if (playedKey) playedKey.classList.remove('playing');
@@ -74,10 +76,15 @@
       key.classList.add('playing');
       audio.currentTime = 0;
       audio.play();
-      setTimeout(remover, 1000);
+    }
+
+    function remover(e) {
+      const key = getNode(`.key[data-key="${e.keyCode}"]`);
+      key.classList.remove('playing')
     }
 
     window.addEventListener('keydown', playStart);
+    window.addEventListener('keyup', remover);
   </script>
 
 </body>

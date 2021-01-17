@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Array Cardio 💪</title>
 </head>
+
 <body>
   <p><em>Psst: have a look at the JavaScript Console</em> 💝</p>
   <script>
@@ -48,25 +50,25 @@
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
     const test03 = inventors.sort((a, b) => {
-      return a.year > b.year? 1 : -1;
-     });
+      return a.year > b.year ? 1 : -1;
+    });
 
     console.table(test03);
 
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live all together?
     const test04 = inventors.reduce((acc, curr) => {
-      return acc + ( curr.passed - curr.year)
+      return acc + (curr.passed - curr.year)
     }, 0);
-    
+
     console.log('test04', test04);
 
     // 5. Sort the inventors by years lived
     const test05 = inventors.sort((a, b) => {
       const inventorA = a.passed - a.year;
       const inventorB = b.passed - b.year;
-      
-      return inventorA > inventorB? 1 : -1;
+
+      return inventorA > inventorB ? 1 : -1;
     })
 
     console.table(test05);
@@ -85,10 +87,10 @@
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
-    const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+    const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck'];
 
     const test08 = data.reduce((obj, curr) => {
-      if(!obj[curr]) { obj[curr] = 0; }
+      if (!obj[curr]) { obj[curr] = 0; }
       obj[curr]++
       return obj
     }, {})
@@ -96,4 +98,5 @@
     console.log(test08);
   </script>
 </body>
+
 </html>

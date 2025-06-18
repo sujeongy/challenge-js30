@@ -1,5 +1,35 @@
-﻿# JavaScript30
+﻿# 🗂️ JavaScript 30 Challenge
 
-각 과제폴더 내에
-1. starter 복사하여, index-MINE.html 파일내에 직접 구현
-2. 배운 점에 대해 README.md로 작성
+A collection of 30 small vanilla JavaScript projects based on [Wes Bos's JavaScript30](https://javascript30.com/).  
+This is my personal challenge to sharpen my pure JS & DOM manipulation skills.
+
+---
+
+## 📌 What is JavaScript30?
+
+- 30 Days → 30 Mini Vanilla JS Projects
+- No libraries, no frameworks, no compilers
+- Focus on understanding JS fundamentals & browser APIs
+
+---
+
+## 🏁 How to run
+
+```bash
+# Clone this repository
+git clone https://github.com/sujeongy/challenge-js30.git
+
+# Open each project folder & run index.html directly in your browser
+```
+
+## ✅ My Key Learnings
+
+- DOM event handling
+- Working with audio & video
+- Handling keyboard inputs
+- Using requestAnimationFrame
+- Manipulating CSS variables
+
+## 📚 Resources
+
+JavaScript30 Official

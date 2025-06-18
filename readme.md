@@ -32,4 +32,4 @@ git clone https://github.com/sujeongy/challenge-js30.git
 
 ## 📚 Resources
 
-JavaScript30 Official
+- [JavaScript30 Official](https://javascript30.com/)

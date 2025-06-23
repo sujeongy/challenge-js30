@@ -46,5 +46,5 @@ function setTime() {
   - 구글 검색
   - 완료 소스 참고
 
-🔗 링크
+## 🔗 링크
 - [원본 강의](https://courses.wesbos.com/account/access/68525af9003a1d49a04fd4c6/view/194130581)

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Type Ahead 👀</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="https://fav.farm/🔥" />
+  </head>
+  <body>
+    <form class="search-form">
+      <input type="text" class="search" placeholder="City or State" />
+      <ul class="suggestions">
+        <li>Filter for a city</li>
+        <li>or a state</li>
+      </ul>
+    </form>
+    <script>
+      const endpoint =
+        "https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json";
+      const cities = [];
+      fetch(endpoint)
+        .then((blob) => blob.json())
+        .then((data) => cities.push(...data));
+
+      const suggestionsEle = document.querySelector(".suggestions");
+
+      function highlightText(cityName, stateName, keyword) {
+        /**
+        // 정규식 몰랐을때 무모한 도전
+        let lowerStr = cityName.toLowerCase();
+        let lowerStr2 = stateName.toLowerCase();
+        let lowerKeyWord = keyword.toLowerCase();
+        const result1 = lowerStr.replaceAll(
+          lowerKeyWord,
+          `<span class="hl">${lowerKeyWord}</span>`
+        );
+        const result2 = lowerStr2.replaceAll(
+          lowerKeyWord,
+          `<span class="hl">${lowerKeyWord}</span>`
+        );
+        **/
+        const regex = new RegExp(keyword, "gi");
+        cityName = cityName.replace(
+          regex,
+          (match) => `<span class="hl">${match}</span>`
+        );
+        stateName = stateName.replace(
+          regex,
+          (match) => `<span class="hl">${match}</span>`
+        );
+
+        return `<span>${cityName}</span>, <span>${stateName}</span>`;
+      }
+      function findCity(e) {
+        const regex = new RegExp(this.value, "gi"); // 검색시, 대소문자 관계없이 검색하기
+        const nodeList = cities
+          .filter((info) => {
+            return info.city.match(regex) || info.state.match(regex);
+          })
+          .sort((a, b) => parseInt(b.population) - parseInt(a.population))
+          .map((info) => {
+            return `<li><span>${highlightText(
+              info.city,
+              info.state,
+              this.value
+            )}</span> <span class="population">${parseInt(
+              info.population,
+              10
+            ).toLocaleString()}</span></li>`;
+          });
+        console.log(nodeList.join(""));
+        suggestionsEle.innerHTML = nodeList.join("");
+      }
+
+      const searchInput = document.querySelector(".search");
+      searchInput.addEventListener("keyup", findCity);
+      searchInput.addEventListener("change", findCity);
+    </script>
+  </body>
+</html>

@@ -1,11 +1,10 @@
-# Day 05 - Flex Panel Gallery/index-MINE.html
+# Day 05 - Flex Panel Gallery
 
-<img width="1028" alt="image" src="https://github.com/user-attachments/assets/e220f833-aa22-4144-a707-f2a402cec60f" />
+<img width="1028" alt="image" src="https://github.com/user-attachments/assets/62d5a6c6-df7d-4bb4-9ee6-02d390209ed4" />
+
 
 ## 📖 설명
-
 CSS FLEX 이용하여 다이나믹 이미지 페이지 만들기
-
 
 ## 📌 배운 점
 - `flex` 속성 제대로 사용하기(정확히는 `flex-grow`)
@@ -14,28 +13,27 @@ CSS FLEX 이용하여 다이나믹 이미지 페이지 만들기
 
 
 ## 🧩 주요 코드
-
 ```css
- .panel {
-    background: #6B0F9C;
-    box-shadow: inset 0 0 0 5px rgba(255,255,255,0.1);
-    color: white;
-    text-align: center;
-    align-items: center;
-    /* Safari transitionend event.propertyName === flex */
-    /* Chrome + FF transitionend event.propertyName === flex-grow */
-    transition:
-      font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
-      flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
-      background 0.2s;
-    font-size: 20px;
-    background-size: cover;
-    background-position: center;
-    flex: 1; /* 필요성을 깜빡하고 있었다. */
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-  }
+.panel {
+  background: #6B0F9C;
+  box-shadow: inset 0 0 0 5px rgba(255,255,255,0.1);
+  color: white;
+  text-align: center;
+  align-items: center;
+  /* Safari transitionend event.propertyName === flex */
+  /* Chrome + FF transitionend event.propertyName === flex-grow */
+  transition:
+    font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+    flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+    background 0.2s;
+  font-size: 20px;
+  background-size: cover;
+  background-position: center;
+  flex: 1; /* 필요성을 깜빡하고 있었다. */
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
 ```
 ```js
 const panels = document.querySelectorAll(".panel");

@@ -28,4 +28,4 @@ console.count("A");
 ## 🔗 링크
 
 - [MDN - console](https://developer.mozilla.org/en-US/docs/Web/API/console)
-- [원본 강의]()
+- [원본 강의](https://courses.wesbos.com/account/access/68525af9003a1d49a04fd4c6/view/194129876)

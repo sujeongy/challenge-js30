@@ -99,9 +99,13 @@
       const checkInputs = document.querySelectorAll(
         '.item input[type="checkbox"]'
       );
+      let checkedInput;
 
       const handleCheckBox = (e) => {
+        let flag = false;
         if (e.shiftKey && e.target.checked) {
+          console.log("checked working", this);
+          /**
           const arrayFromNodeList = Array.from(checkInputs); // NodeList를 배열로 변환
           const index = arrayFromNodeList.findIndex(
             (element) => element.checked
@@ -109,7 +113,18 @@
           for (let i = index; i < arrayFromNodeList.length; i++) {
             checkInputs.item(i).checked = true;
           }
+          **/
+          checkInputs.forEach((checkInput) => {
+            if (checkedInput === checkInput || checkInput === e.target) {
+              flag = !flag;
+              console.log("flag working");
+            }
+            if (flag) {
+              checkInput.checked = true;
+            }
+          });
         }
+        checkedInput = e.target;
       };
 
       checkInputs.forEach((checkInput) =>
